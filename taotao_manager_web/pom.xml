@@ -16,6 +16,21 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+
+    <!--依赖于interface  pojo -->
+    <!--alt+ctr + 空格 做提示-->
+    <dependency>
+        <groupId>com.taotao</groupId>
+        <artifactId>taotao_manager_interface</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <!--添加jackson依赖-->
+    <dependency>
+        <groupId>com.taotao</groupId>
+        <artifactId>taotao_common</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -64,6 +79,33 @@
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
+        </dependency>
+
+        <!--添加dubbo的依赖一定要注意排除依赖-->
+
+        <!--添加dubbo的依赖-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <!-- 排除依赖 -->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.jboss.netty</groupId>
+                    <artifactId>netty</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
         </dependency>
 
     </dependencies>
