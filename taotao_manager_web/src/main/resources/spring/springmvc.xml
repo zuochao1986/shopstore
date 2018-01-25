@@ -25,7 +25,7 @@
     <dubbo:application name="taotao_manager_web"></dubbo:application>
     <dubbo:registry address="39.108.229.101" protocol="zookeeper" port="2181"></dubbo:registry>
     <!--引入服务-->
-    <dubbo:reference interface="com.taobao.service.TestService" id="testService" timeout="1000000"></dubbo:reference>
-    <!--<dubbo:reference interface="com.taotao.service.ItemService"  id="itemService" timeout="1000000"></dubbo:reference>-->
+    <dubbo:reference interface="com.taotao.service.TestService" id="testService" timeout="1000000"></dubbo:reference>
+    <dubbo:reference interface="com.taotao.service.ItemService"  id="itemService" timeout="1000000"></dubbo:reference>
 
 </beans>
