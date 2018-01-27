@@ -8,6 +8,9 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+   <!--加载属性文件-->
+    <context:property-placeholder location="classpath:resource/resource.properties"></context:property-placeholder>
+
     <!--组件扫描web层-->
     <context:component-scan base-package="com.taotao.controller"></context:component-scan>
     <!--注解驱动-->
@@ -16,6 +19,12 @@
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"></property>
         <property name="suffix" value=".jsp"></property>
+    </bean>
+
+    <!--配置多媒体文件上传解析器-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"></property>
+        <property name="maxUploadSize" value="5242880"></property>
     </bean>
 
     <mvc:resources mapping="/css/**" location="/css/"></mvc:resources>
@@ -27,5 +36,6 @@
     <!--引入服务-->
     <dubbo:reference interface="com.taotao.service.TestService" id="testService" timeout="1000000"></dubbo:reference>
     <dubbo:reference interface="com.taotao.service.ItemService"  id="itemService" timeout="1000000"></dubbo:reference>
+    <dubbo:reference interface="com.taotao.service.ItemCatService"  id="itemCatService" timeout="1000000"></dubbo:reference>
 
 </beans>

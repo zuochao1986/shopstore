@@ -9,6 +9,7 @@
 	            <td>商品类目:</td>
 	            <td>
 	            	<a href="javascript:void(0)" class="easyui-linkbutton selectItemCat">选择类目</a>
+					<!--<span></span>-->
 	            	<input type="hidden" name="cid" style="width: 280px;"></input>
 	            </td>
 	        </tr>
@@ -43,18 +44,15 @@
 	                 <input type="hidden" name="image"/>
 	            </td>
 	        </tr>
-	        <tr>
-	            <td>商品描述:</td>
-	            <td>
-	                <textarea style="width:800px;height:300px;visibility:hidden;" name="desc"></textarea>
-	            </td>
-	        </tr>
-	        <tr class="params hide">
-	        	<td>商品规格:</td>
-	        	<td>
-	        		
-	        	</td>
-	        </tr>
+			<tr>
+				<td>商品描述:</td>
+				<td>
+					<textarea style="width:800px;height:300px;visibility:hidden;" name="desc"></textarea>
+				</td>
+			</tr>
+			<tr class="params hide">
+
+			</tr>
 	    </table>
 	    <input type="hidden" name="itemParams"/>
 	</form>
